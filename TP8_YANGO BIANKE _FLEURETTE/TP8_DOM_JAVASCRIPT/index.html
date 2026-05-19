@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset=UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Accuiel-Mon-mini-site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+  <header>
+  <h1>Mon mini-site web</h1>
+  </header>
+  <nav>
+    <a href="index.html">Accuiel</a>
+    <a href="presentation.html">presentation</a>
+    <a href="contact.html">contact</a>
+  </nav>
+  <div class="container">
+    <main>
+      <section class="carte">
+        <h2>Laboratoire de manipulaion du DOM</h2>
+        <p id="texteDynamique">ce texte initial sera modifier avec javascript.</p>
+        <button onclick="changerTexte()">Changer le texte</button>
+        <button onclick="changerCouleur()">Changer la couleur</button>
+        <button onclick="changerStyle()">Changer le stye complet</button>
+        <button onclick="masquerTexte()">Masquer</button>
+        <button onclick="afficherTexte()">Afficher</button>
+        <button onclick="reinitialiserTexre()">Réinitialiser</button>
+        <label for="nomUtilisateur">Entrez votre nom:</label>
+        <input type="text" id="nomUtilisateur" placeholder="Exemple:Yannick">
+        <label for="domaineUtilisateur">Choisissez votre domaine d'interet:</label>
+        <select id="domaineUtilisateur">
+          <option value="">--Choisissez le domaine--</option>
+          <option value="réseaux informatiques">Réseaux informatiques</option>
+          <option value="cybersécurité">Cybersécurité</option>
+          <option value="développement web">Développement web</option>
+          <option value="administration système">Administration système</option>
+        </select>
+          <h2>Compteur iteractif</h2>
+          <p>Ce compteur montre comment javascript peut conserver et modifier une valeue.</p>
+          <p id="compteur">0</p>
+          <button   onclick="incrementer ()">Augmenter</button>
+          <button   onclick="decrementer ()">Diminuer</button>
+          <button   onclick="remettreCompteurAZero ()">Remettre à zero</button>
+        <button onclick="afficherMessage()">Afficher le message</button>
+        <p id="messageResultat"></p>
+      </section>
+  <h2>Bienvenue</h2>
+  <p>ce site est progressivement amélioré pour devenir lisible sur ordinateur,tablette et smartphone.</p>
+    </main>
+    <aside>
+  <h2>Informations</h2>
+  <p>cette zone peut contenir des informations complémentaire.</p>
+    </aside>
+  </div>
+  <footer>
+  <p>&copy; 2026-Mon mini-site</p>
+  </footer>
+  </div>
+  <script>
+    function changerTexte () {
+       document.getElementById("texteDynamique").textContent = "le texte a été modifié grace au DOM.";
+      let message ="";
+      let domaine=document.getElementById("domaineUtilisateur").value;
+      if(nom==="") {
+        message="Bienvenue" + nom + "dans le cours de programmation web.";
+      }
+      document.getElementById("messageResultat").textContent=message;
+    }
+    function changerCouleur () {
+      document.getElementById("texteDynamique").style.color  =  "red";
+       
+    }
+      function changerStyle () {
+       let  element  =  document.getElementById("texteDynamique");
+       element.style.color  =  "white";
+       element.style.backgroundColor  =  "#0b3d91";
+       element.style.fontSize  =  "20px";
+       element.style.fontWeight   =  "bold";
+       element.style.padding  =  "12px";
+       element.stle.borderRadius  =  "8px";
+      }
+      function masquerTexte ()  {
+        document.getElementById("texteDynamique").style.display  =  "none";
+      }
+      function afficherTexte ()  {
+        document.getElementById("texteDynamique").style.display  =  "block";
+      }
+      function reinitialiserTexte ()  {
+        let elementt = document.getElementById("texteDynamique");
+        element.textContent  =  "ce texte initial sera modifier avec javascript.";
+        element.style.color  =  "#222";
+       element.style.backgroundColor  =  "transparent";
+       element.style.fontSize  =  "16px";
+       element.style.fontWeight   =  "normal";
+       element.style.padding  =  "0";
+       element.stle.borderRadius  =  "0";
+       element.style.display  =  "block";
+      }
+      let valeurCompteur = 0;
+      function incrementer () {
+        valeurCompteur  =  valeurCompteur + 1;
+        document.getElementById("compteur").textContent  =  valeurCompetur;
+      }
+      function decrementer () {
+        valeurCompteur  =  valeurCompteur  - 1;
+        document.getElementById("compteur").textContent  +  valeurCompteur;
+      }
+      function remettreCompteurAZero ()  {
+        valeurCompteur  =  0;
+        document.getElementById("compteur").textContent  =  valeurCompteur;
+      }
+
+  </script>
+</body>
+</html>
